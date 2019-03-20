@@ -25,5 +25,9 @@ public class Client extends User {
         return item.isAvailable();
     }
 
+    private void showMediaItem(String title){
+        MediaItem item = mediaLibrary.searchByTitle(title);
+        System.out.println(item);
+    }
 
 }
