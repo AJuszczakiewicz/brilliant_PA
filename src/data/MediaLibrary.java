@@ -20,9 +20,17 @@ public class MediaLibrary {
         mediaItemsData.remove(item);
     }
 
-    public void editMetaData() {
-
+    public MediaItem searchByTitle(String title) {
+        for (MediaItem item : mediaItemsData) {
+            if (item.getTitle().equals(title)) {
+                return item;
+            }
+        }
+        return null;
     }
 
 
+    public void editMetaData() {
+
+    }
 }
