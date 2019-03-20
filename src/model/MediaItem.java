@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public abstract class MediaItem {
@@ -22,6 +23,10 @@ public abstract class MediaItem {
         return releaseDate;
     }
 
+    public void editItem(ArrayList edittedData) {
+
+    }
+
     public boolean isAvailable() {
         return availability;
     }
@@ -32,7 +37,7 @@ public abstract class MediaItem {
 
 
     public String preview(){
-        return "";
+        return title;
     }
 }
 

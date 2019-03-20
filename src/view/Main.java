@@ -5,5 +5,6 @@ public class Main {
         showMenu();
     }
 
-    private static void showMenu(){}
+    private static void showMenu() {
+    }
 }

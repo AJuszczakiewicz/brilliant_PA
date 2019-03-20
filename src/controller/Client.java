@@ -21,13 +21,13 @@ public class Client extends User {
         return rentedItems;
     }
 
-    private boolean checkAvailability(MediaItem item) {
+    public boolean checkAvailability(MediaItem item) {
         return item.isAvailable();
     }
 
-    private void showMediaItem(String title){
+    public String showMediaItem(String title) {
         MediaItem item = mediaLibrary.searchByTitle(title);
-        System.out.println(item);
+        return item.preview();
     }
 
 }
