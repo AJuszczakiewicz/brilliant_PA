@@ -24,4 +24,14 @@ public class Book extends MediaItem implements Readable{
 
     }
 
+    @Override
+    public String preview(){
+            return
+                    "\nAuthor: " + this.author +
+                    "\nTitle: " + this.getTitle() +
+                    "\nAvailable: " + this.isAvailable() +
+                    "\nRealise date: " + this.getReleaseDate();
+
+
+    }
 }

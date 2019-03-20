@@ -32,4 +32,13 @@ public class Magazine extends MediaItem implements Readable {
     @Override
     public void read() {}
 
+    @Override
+    public String preview() {
+        return
+                        "\nTitle: " + this.getTitle() +
+                        "\nAvailable: " + this.isAvailable() +
+                        "\nRealise date: " + this.getReleaseDate();
+    }
+
 }
+

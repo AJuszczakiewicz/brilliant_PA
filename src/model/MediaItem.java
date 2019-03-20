@@ -26,8 +26,13 @@ public abstract class MediaItem {
         return availability;
     }
 
-    public void isAvailable(boolean availability) {
+    public void setAvailability(boolean availability) {
         this.availability = availability;
+    }
+
+
+    public String preview(){
+        return "";
     }
 }
 

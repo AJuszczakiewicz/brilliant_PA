@@ -53,6 +53,15 @@ public class Film extends MediaItem implements Watchable{
     }
 
     @Override
+    public String preview() {
+        return
+                "\nDirector: " + this.director +
+                        "\nTitle: " + this.getTitle() +
+                        "\nAvailable: " + this.isAvailable() +
+                        "\nRealise date: " + this.getReleaseDate();
+    }
+
+    @Override
     public void watch() {}
 
 }
