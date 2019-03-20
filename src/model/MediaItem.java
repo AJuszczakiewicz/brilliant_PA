@@ -15,16 +15,16 @@ public abstract class MediaItem {
         this.availability = availability;
     }
 
+    abstract void editItem(ArrayList editedData);
+
+    abstract String preview();
+
     public String getTitle() {
         return title;
     }
 
     public Date getReleaseDate() {
         return releaseDate;
-    }
-
-    public void editItem(ArrayList edittedData) {
-
     }
 
     public boolean isAvailable() {
@@ -35,9 +35,5 @@ public abstract class MediaItem {
         this.availability = availability;
     }
 
-
-    public String preview(){
-        return title;
-    }
 }
 
