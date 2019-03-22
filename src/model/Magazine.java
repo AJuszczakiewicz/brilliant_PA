@@ -1,44 +1,16 @@
 package model;
 
-import java.util.Date;
+import java.util.Map;
 
 public class Magazine extends MediaItem implements Readable {
 
-    private String publisher;
-    private String category;
 
-    Magazine(String title, Date releaseDate, boolean availability, String publisher, String category) {
-        super(title, releaseDate, availability);
-        this.publisher = publisher;
-        this.category = category;
-    }
-
-    public void setPublisher(String publisher) {
-        this.publisher = publisher;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public String getPublisher() {
-        return publisher;
+    Magazine(String title, String releaseDate, boolean availability, Map<String, String> metadata) {
+        super(title, releaseDate, availability, metadata);
     }
 
     @Override
     public void read() {}
-
-    @Override
-    public String preview() {
-        return
-                        "\nTitle: " + this.getTitle() +
-                        "\nAvailable: " + this.isAvailable() +
-                        "\nRealise date: " + this.getReleaseDate();
-    }
 
 }
 

@@ -1,36 +1,15 @@
 package model;
 
-import java.util.Date;
+import java.util.Map;
 
 public class Book extends MediaItem implements Readable{
 
-    private String author;
-
-    public Book(String title, Date releaseDate, boolean availability, String author) {
-        super(title, releaseDate, availability);
-        this.author = author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getAuthor() {
-        return author;
+    Book(String title, String releaseDate, boolean availability, Map<String, String> metadata) {
+        super(title, releaseDate, availability, metadata);
     }
 
     @Override
     public void read() {
 
     }
-
-    @Override
-    public String preview(){
-            return
-                    "\nAuthor: " + this.author +
-                    "\nTitle: " + this.getTitle() +
-                            "\nAvailable: " + this.isAvailable();
-    }
-
-
 }
