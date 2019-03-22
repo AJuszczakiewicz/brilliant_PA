@@ -4,6 +4,7 @@ import model.MediaItem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MediaLibrary {
     private List<MediaItem> mediaItemsData = new ArrayList<MediaItem>();
@@ -29,7 +30,12 @@ public class MediaLibrary {
         return null;
     }
 
-
-    public void editMetaData() {
+    public void editMetaData(String title, String newTitle, String newReleaseDate,
+                             boolean newAvailability, Map<String, String> metadata) {
+        MediaItem item = searchByTitle(title);
+        item.setTitle(newTitle);
+        item.setReleaseDate(newReleaseDate);
+        item.setAvailability(newAvailability);
+        item.setMetadata(metadata);
     }
 }
