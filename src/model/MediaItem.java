@@ -1,56 +1,34 @@
 package model;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public abstract class MediaItem {
 
-    private String title;
-    private String releaseDate;
+    private final int ID;
     private boolean availability;
-    private Map<String, String> metadata = new HashMap<String, String>();
+    private Metadata metadata;
+    private String title;
 
-    MediaItem(String title, String releaseDate, boolean availability, Map<String, String> metadata) {
+    MediaItem(int ID, String title, boolean availability, Metadata metadata) {
+        this.ID = ID;
         this.title = title;
-        this.releaseDate = releaseDate;
         this.availability = availability;
         this.metadata = metadata;
     }
 
 
-    public String preview() {
-        String preview = String.format("Title: %s", this.title);
-
-        for (Map.Entry<String, String> entry : this.metadata.entrySet()) {
-            preview += "\n" + entry.getKey() + " " + entry.getValue();
-        }
-
-        return preview;
-
+    public int getID() {
+        return ID;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public Map<String, String> getMetadata() {
+    public Metadata getMetadata() {
         return metadata;
     }
 
-    public void setMetadata(Map<String, String> metadata) {
+    public void setMetadata(Metadata metadata) {
         this.metadata = metadata;
-    }
-
-    public boolean isAvailable() {
-        return availability;
-    }
-
-    public String getReleaseDate() {
-        return releaseDate;
-    }
-
-    public void setReleaseDate(String releaseDate) {
-        this.releaseDate = releaseDate;
     }
 
     public void setTitle(String title) {
@@ -59,6 +37,17 @@ public abstract class MediaItem {
 
     public void setAvailability(boolean availability) {
         this.availability = availability;
+    }
+
+    public boolean isAvailable() {
+        return availability;
+    }
+
+    public void editMetaData(String newTitle,
+                             boolean newAvailability, Metadata metadata) {
+        this.setTitle(newTitle);
+        this.setAvailability(newAvailability);
+        this.setMetadata(metadata);
     }
 
 }
