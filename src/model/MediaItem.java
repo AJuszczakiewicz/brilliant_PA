@@ -50,5 +50,6 @@ public abstract class MediaItem {
         this.setMetadata(metadata);
     }
 
+    public abstract void preview();
 }
 

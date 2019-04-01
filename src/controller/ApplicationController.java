@@ -22,21 +22,32 @@ public class ApplicationController {
         view.showUser(user);
     }
 
+    public ApplicationModel getData() {
+        return data;
+    }
+
     public void addItem(UserModel user, MediaItem item) {
-        if (user.getClass().equals(ManagerModel.class)) {
+        if (user instanceof ManagerModel) {
+            // instanceOf
             data.addMediaItem(item);
+        } else {
+            System.out.print("Permission denied.");
         }
-        view.showMenu();
     }
 
     public void removeItem(UserModel user, MediaItem item) {
-        if (user.getClass().equals(ManagerModel.class)) {
-            data.addMediaItem(item);
+        if (user instanceof ManagerModel) {
+            data.removeMediaItem(item);
         }
     }
 
     public String displayItem(String keyword) {
         MediaItem media = data.searchForItem(keyword);
         return media.toString();
+    }
+
+    public MediaItem findItem(String keyword) {
+        MediaItem media = data.searchForItem(keyword);
+        return media;
     }
 }

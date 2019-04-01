@@ -11,5 +11,10 @@ public class MagazineModel extends MediaItem implements Readable {
     public void read() {
     }
 
+    @Override
+    public void preview() {
+        read();
+    }
+
 }
 

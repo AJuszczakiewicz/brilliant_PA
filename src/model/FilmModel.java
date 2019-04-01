@@ -11,4 +11,9 @@ public class FilmModel extends MediaItem implements Watchable {
     public void watch() {
     }
 
+    @Override
+    public void preview() {
+        watch();
+    }
+
 }

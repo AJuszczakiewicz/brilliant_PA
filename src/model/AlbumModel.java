@@ -9,4 +9,9 @@ public class AlbumModel extends MediaItem implements Listenable {
     @Override
     public void play() {
     }
+
+    @Override
+    public void preview() {
+        play();
+    }
 }

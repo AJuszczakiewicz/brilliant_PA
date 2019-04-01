@@ -6,7 +6,6 @@ import java.util.Map;
 
 public class Metadata {
 
-
     private String author;
     private String pages;
     private String duration;

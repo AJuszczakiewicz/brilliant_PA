@@ -9,4 +9,9 @@ public class BookModel extends MediaItem implements Readable {
     @Override
     public void read() {
     }
+
+    @Override
+    public void preview() {
+        read();
+    }
 }
